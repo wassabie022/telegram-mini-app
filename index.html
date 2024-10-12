@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ползунок и расчёт</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Иконка -->
+        <div class="icon">
+            <img src="https://i.imgur.com/clkP7Gm.png" alt="Иконка">
+        </div>
+
+        <!-- Ползунок -->
+        <label for="slider" class="slider-label">Укажите сумму, чтобы мы рассчитали стратегию</label>
+        <input type="range" id="slider" min="100" max="10000" value="1000">
+
+        <!-- Ввод суммы -->
+        <input type="number" id="amountInput" placeholder="Введите сумму" value="1000">
+
+        <!-- Отображение выбранной суммы -->
+        <div class="display-sum">
+            <span id="displayAmount">1000₽</span>
+        </div>
+
+        <!-- Кнопка Рассчитать -->
+        <button id="calculateBtn">Рассчитать</button>
+    </div>
+
+    <!-- Подключаем эмуляцию Mini App -->
+    <script src="telegramEmulation.js"></script>
+
+    <script src="script.js"></script> <!-- Подключение основного JS кода -->
+</body>
+</html>
