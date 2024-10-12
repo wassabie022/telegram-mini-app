@@ -1,0 +1,1 @@
+(()=>{const t=document.getElementById("slider"),e=document.getElementById("amountInput"),n=document.getElementById("displayAmount");t.addEventListener("input",(function(){const u=t.value;e.value=u,n.textContent=u+"₽"})),e.addEventListener("input",(function(){const u=e.value;t.value=u,n.textContent=u+"₽"}))})();
