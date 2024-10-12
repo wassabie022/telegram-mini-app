@@ -1,5 +1,15 @@
 {
-  "dependencies": {
-    "@telegram-apps/sdk": "^2.4.0"
+  "name": "slider-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'No build step defined.'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1"
   }
 }

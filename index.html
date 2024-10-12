@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ползунок и расчёт</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <div class="container">
         <!-- Иконка -->
         <div class="icon">
-            <img src="https://i.imgur.com/clkP7Gm.png" alt="Иконка">
+            <img src="images/IMG_4232.png" alt="Иконка">
         </div>
 
         <!-- Ползунок -->
@@ -29,9 +30,31 @@
         <button id="calculateBtn">Рассчитать</button>
     </div>
 
-    <!-- Подключаем эмуляцию Mini App -->
-    <script src="telegramEmulation.js"></script>
+    <script>
+        Telegram.WebApp.ready();
 
-    <script src="script.js"></script> <!-- Подключение основного JS кода -->
+        const slider = document.getElementById('slider');
+        const amountInput = document.getElementById('amountInput');
+        const displayAmount = document.getElementById('displayAmount');
+
+        // Обновление суммы при изменении ползунка
+        slider.addEventListener('input', function() {
+            const value = slider.value;
+            amountInput.value = value;
+            displayAmount.textContent = value + '₽';
+        });
+
+        // Обновление ползунка при вводе суммы вручную
+        amountInput.addEventListener('input', function() {
+            const value = amountInput.value;
+            slider.value = value;
+            displayAmount.textContent = value + '₽';
+        });
+
+        // Закрытие Mini App по нажатию на кнопку
+        document.getElementById('calculateBtn').addEventListener('click', () => {
+            Telegram.WebApp.close();
+        });
+    </script>
 </body>
 </html>
